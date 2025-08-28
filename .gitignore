@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.venv/
+.env
+.cache/
+*.sqlite
+*.db
+*.pt
+*.bin
+*.zip
+data/*.conllu
+!data/sample.conllu

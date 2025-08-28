@@ -1,0 +1,7 @@
+fastapi>=0.110
+uvicorn>=0.29
+conllu>=4.5.3
+pydantic>=2.5
+# Optional: comment out if not using embeddings
+transformers>=4.41.0
+torch>=2.2.0
