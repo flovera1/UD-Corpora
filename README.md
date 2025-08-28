@@ -3,22 +3,22 @@
 This demo parses Universal Dependencies (UD) corpora (CoNLL-U), provides syntactic queries (lemma, UPOS, deprel), pattern queries, and optional semantic embeddings. It serves as a minimal research-oriented infrastructure example.
 # UD-Corpora
 
-1) Requirements
+## 1) Requirements
 
 Python 3.9+
 
 (Optional) transformers + torch are listed in requirements.txt. If you don’t want embeddings, comment out those two lines before installing to speed things up.
 
-2) Get the code
-# if you downloaded the ZIP
+## 2) Get the code
+if you downloaded the ZIP
 unzip ud-corpora-demo.zip
 cd ud-corpora-demo
 
-# or if you cloned the repo
+ or if you cloned the repo
 git clone <your-repo-url>.git
 cd ud-corpora-demo
 
-3) Create a virtual environment & install deps
+## 3) Create a virtual environment & install deps
 python -m venv .venv
 # macOS/Linux:
 source .venv/bin/activate
@@ -33,13 +33,13 @@ Tip: To skip heavy installs, open requirements.txt and comment out:
 transformers>=4.41.0
 torch>=2.2.0
 
-4) Run the API
+## 4) Run the API
 uvicorn app.main:app --reload
 
 
 Open the interactive docs at: http://127.0.0.1:8000/docs
 
-5) Load the sample corpus
+## 5) Load the sample corpus
 
 With the server running, either:
 
@@ -52,7 +52,7 @@ curl -X POST http://127.0.0.1:8000/load
 
 You should see stats from the included data/sample.conllu.
 
-6) Try basic endpoints
+## 6) Try basic endpoints
 
 Stats
 
@@ -83,7 +83,7 @@ curl -X POST http://127.0.0.1:8000/search/pattern \
 
 You can also run these directly in Swagger UI.
 
-7) Add your own UD corpora
+## 7) Add your own UD corpora
 
 Download a UD treebank (e.g., UD English or UD Dutch) from https://universaldependencies.org/
 
@@ -91,14 +91,14 @@ Place .conllu files under the project’s data/ folder
 
 Call POST /load again to re-index
 
-8) Use the CLI (optional)
+## 8) Use the CLI (optional)
 python scripts/ingest_ud.py --stats
 python scripts/ingest_ud.py --lemma dog
 python scripts/ingest_ud.py --upos NOUN
 python scripts/ingest_ud.py --deprel nsubj
 python scripts/ingest_ud.py --pattern DET ADJ NOUN
 
-9) Troubleshooting
+## 9) Troubleshooting
 
 uvicorn: command not found → pip install uvicorn (or ensure venv is activated).
 
